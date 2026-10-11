@@ -9,10 +9,10 @@ router:
     pluginsConfigFile: "default-plugins.yaml"
     resources:
       requests:
-        cpu: "4"
-        memory: 8Gi
+        cpu: "100m"
+        memory: "128Mi"
       limits:
-        memory: 16Gi
+        memory: "256Mi"
 
   inferencePool:
     failureMode: "FailOpen"
@@ -52,10 +52,10 @@ router:
     # Resource requests and limits for the sidecar proxy.
     resources:
       requests:
-        cpu: "4"
-        memory: 8Gi
+        cpu: "100m"
+        memory: "128Mi"
       limits:
-        memory: 16Gi
+        memory: "256Mi"
 
   tracing:
     otelExporterEndpoint: "http://localhost:4317"

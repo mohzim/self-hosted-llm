@@ -37,41 +37,30 @@ module "eks" {
       capacity_type = "SPOT"
     }
 
-    # epp_node_group_1 = {
-    #   ami_type      = "AL2023_x86_64_STANDARD"
-    #   intance_types = ["t3.large"]
-    #   disk_size     = 50
-    #   # vpc_security_group_ids = [aws_security_group.all_worker_mgmt.id]
-    #   min_size      = 2
-    #   max_size      = 4
-    #   desired_size  = 2
-    #   capacity_type = "SPOT"
-    # }
+    gpu_node_group_250 = {
+      ami_type       = "AL2023_x86_64_NVIDIA"
+      instance_types = ["g6.xlarge"]
+      capacity_type  = "SPOT"
 
-    # gpu_node_group_250 = {
-    #   ami_type       = "AL2023_x86_64_NVIDIA"
-    #   instance_types = ["g6.xlarge"]
-    #   capacity_type  = "SPOT"
+      min_size     = 1
+      max_size     = 2
+      desired_size = 1
 
-    #   min_size     = 1
-    #   max_size     = 2
-    #   desired_size = 1
-
-    #   # Increase disk space via block device mappings
-    #   block_device_mappings = {
-    #     xvda = {
-    #       device_name = "/dev/xvda"
-    #       ebs = {
-    #         volume_size           = 100 # Size in GiB
-    #         volume_type           = "gp3"
-    #         iops                  = 3000
-    #         throughput            = 125
-    #         encrypted             = true
-    #         delete_on_termination = true
-    #       }
-    #     }
-    #   }
-    # }
+      # Increase disk space via block device mappings
+      block_device_mappings = {
+        xvda = {
+          device_name = "/dev/xvda"
+          ebs = {
+            volume_size           = 100 # Size in GiB
+            volume_type           = "gp3"
+            iops                  = 3000
+            throughput            = 125
+            encrypted             = true
+            delete_on_termination = true
+          }
+        }
+      }
+    }
   }
 }
 
