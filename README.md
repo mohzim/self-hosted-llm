@@ -1,6 +1,6 @@
 # Self-Hosted LLM on AWS EKS with llm-d and vLLM
 
-In today's rapidly changing LLM era, running LLMs using plaforms such as AWS Bedrock, Azure Foundry is a norm. However we have use cases to run LLM models, especially open weigh models, to have more controle over data, latency, and cost. This repo shows the alternative option which is quickly becoming an industry standard: a **self-hosted, production-shaped inference stack** on Kubernetes using the **llm-d router** and the **vLLM** serving engine. We can bring it up with Terraform and a few `kubectl` commands.
+In today's rapidly changing LLM era, running LLMs using plaforms such as AWS Bedrock, Azure Foundry is a norm. However we have use cases to run LLM models, especially open weight models, to have more control over data, latency, and cost. This repo shows the alternative option which is quickly becoming an industry standard: a **self-hosted, production-shaped inference stack** on Kubernetes using the **llm-d router** and the **vLLM** serving engine. We can bring it up with Terraform and a few `kubectl` commands.
 
 This repo follows the llm-d [optimized baseline guide](https://github.com/llm-d/llm-d/blob/main/guides/optimized-baseline/README.md) and with a deliberately small footprint of single GPU and a small model to showcase the building blocks that would scale up in production.
 
